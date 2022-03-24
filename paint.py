@@ -38,12 +38,37 @@ def square(start, end):
 
 def circle(start, end):
     """Draw circle from start to end."""
-    pass  # TODO
+    '''El circulo es una figura en la que tiene muchas lineas, por lo que se puso un for que
+     tuviera un rango de 37 linea, la linea iria derecho luego se moviera a la derecha y repetiria ese movimentio 37 veces'''
+    "Aarón García Guerrero"
+
+    
+    up()
+    goto(start.x, start.y)
+    down()
+    for count in range(37): 
+        forward(end.x - start.x)
+        right(10)
 
 
 def rectangle(start, end):
     """Draw rectangle from start to end."""
-    pass  # TODO
+
+    '''Para la def de rectangulo es igual que el cuadrado, la unica diferencia es
+        que una de las lineas deberia ser más larga, en este caso es la base que
+        sera más larga. Se hicieron dos "for", un for de rango 2 que seran las lineas de la base
+        y un for que haga las lineas laterales'''
+    "Aarón García Guerrero"
+
+    up()
+    goto(start.x, start.y)
+    down()
+    for count in range(2):
+        forward(end.x - start.x)
+        right(90)
+        for count in range(1):
+            forward(40)
+            right(90)
 
 
 def triangle(start, end):
