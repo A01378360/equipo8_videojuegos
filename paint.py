@@ -73,6 +73,10 @@ def rectangle(start, end):
 
 def triangle(start, end):
     """Draw triangle from start to end."""
+    '''En esta función se dibuja un triángulo isósceles, se usa un "for" de rango 3 para dibujar
+        las tres líneas del triángulo con sus respectivas medidas'''
+    "Brenda Vega Méndez"
+    
     up()
     goto(start.x, start.y)
     down()
@@ -113,7 +117,7 @@ onkey(lambda: color('white'), 'W')
 onkey(lambda: color('green'), 'G')
 onkey(lambda: color('blue'), 'B')
 onkey(lambda: color('red'), 'R')
-onkey(lambda: color('pink'), 'P')
+onkey(lambda: color('pink'), 'P') '''Se agrega un color como los anteriores, se define el nombre del color y la letra con la que será identificado y seleccionado''' "Brenda Vega Méndez"
 onkey(lambda: store('shape', line), 'l')
 onkey(lambda: store('shape', square), 's')
 onkey(lambda: store('shape', circle), 'c')
