@@ -4,8 +4,8 @@ Autores:
 - Brenda Vega Méndez A01378360
 
 ## Videojuegos 
-1. Paint 
-2. Snake
-3. Pacman
-4. Cannon
-5. Memory
+1. [https://github.com/A01378360/equipo8_videojuegos/blob/develop/paint.py]
+2. [https://github.com/A01378360/equipo8_videojuegos/blob/develop/snake.py] 
+3. [https://github.com/A01378360/equipo8_videojuegos/blob/develop/pacman.py]
+4. [https://github.com/A01378360/equipo8_videojuegos/blob/develop/cannon.py]
+5. [https://github.com/A01378360/equipo8_videojuegos/blob/develop/memory.py]
