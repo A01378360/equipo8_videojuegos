@@ -123,7 +123,7 @@ def Ghost():
     for point, course in ghosts:
         if (randint(0,5) == 4):
             options = [
-                      vector(10, 0), #Aumentar la velocidad de los fantasmas en vector. Brenda Vega Méndez
+                      vector(10, 0), #Aumentar la velocidad de los fantasmas. Brenda Vega Méndez
                       vector(-10, 0),
                       vector(0, 10),
                       vector(0, -10),
