@@ -20,11 +20,12 @@ targets = []
 
 def tap(x, y):
     """Respond to screen tap."""
+    #Para el cambio de la velocidad solo se tiene que cambiar en speed.x y en speed.y
     if not inside(ball):
         ball.x = -199
         ball.y = -199
-        speed.x = (x + 200) / 25
-        speed.y = (y + 200) / 25
+        speed.x = (x + 290) / 25
+        speed.y = (y + 290) / 25
 
 
 def inside(xy):
@@ -55,10 +56,10 @@ def move():
         targets.append(target)
 
     for target in targets:
-        target.x -= 0.5
+        target.x -= 2
 
     if inside(ball):
-        speed.y -= 0.35
+        speed.y -= 0.4
         ball.move(speed)
 
     dupe = targets.copy()
@@ -69,8 +70,8 @@ def move():
             targets.append(target)
 
     draw()
-	
-	#El juego nunca termina al reposicionar un objeto al salirse de la ventana. "Brenda Vega Méndez" 
+    
+    #El juego nunca termina al reposicionar un objeto al salirse de la ventana. "Brenda Vega Méndez" 
     for target in targets:
         if not inside(target):
             target.x = 200
@@ -85,3 +86,4 @@ tracer(False)
 onscreenclick(tap)
 move()
 done()
+

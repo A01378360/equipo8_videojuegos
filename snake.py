@@ -35,6 +35,17 @@ def inside(head):
     """Return True if head inside boundaries."""
     return -200 < head.x < 190 and -200 < head.y < 190
 
+def FoodStep():
+    """Mueve la comida un paso sin salirse de la ventana """ "Aarón García Guerrero"
+
+    global food
+    if ((inside(food))):
+        step = vector(randint(-2,2) * 10, randint(-2,2) * 10)
+        food.move(step)
+    else:
+        food = vector(0,0)
+    ontimer(FoodStep, 900)
+
 
 def move():
     """Move snake forward one segment."""

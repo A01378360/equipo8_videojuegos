@@ -9,7 +9,7 @@ Exercises
 5. Make the ghosts smarter.
 """
 
-from random import choice
+from random import choice, randint
 from turtle import *
 
 from freegames import floor, vector
@@ -108,6 +108,51 @@ def world():
                 path.goto(x + 10, y + 10)
                 path.dot(2, 'white')
 
+def Ghost():
+    """
+    El fantasma sera más listo
+    
+    Aaron Garcia Guerrero
+    """
+    global plan
+
+    for point, course in ghosts:
+        if (randint(0,5) == 4):
+            options = [
+                      vector(5, 0),
+                      vector(-5, 0),
+                      vector(0, 5),
+                      vector(0, -5),
+                      vector(0,pacman.y/2),
+                      vector(pacman.x/2,0)
+                      ]
+            plan = choice(options)
+            course.x = plan.x
+            course.y = plan.y
+        else:
+            if valid(point + course):
+                point.move(course)
+            else:
+                options = [
+                          vector(5, 0),
+                          vector(-5, 0),
+                          vector(0, 5),
+                          vector(0, -5),
+                          vector(0,pacman.y/2),
+                          vector(pacman.x/2,0)
+                           ]
+                plan = choice(options)
+                course.x = plan.x
+                course.y = plan.y
+        up()
+        goto(point.x + 10, point.y + 10)
+        dot(20, 'red')  # Dibuja al fantasma
+    update()
+    
+    for point, course in ghosts:
+        if abs(pacman - point) < 20:
+            return
+    ontimer(Ghost, 100)
 
 def move():
     """Move pacman and all ghosts."""
@@ -132,32 +177,7 @@ def move():
     up()
     goto(pacman.x + 10, pacman.y + 10)
     dot(20, 'yellow')
-
-    for point, course in ghosts:
-        if valid(point + course):
-            point.move(course)
-        else:
-			
-            options = [
-                vector(10, 0),
-                vector(-10, 0),
-                vector(0, 10),
-                vector(0, -10),
-            ]
-            plan = choice(options)
-            course.x = plan.x
-            course.y = plan.y
-
-        up()
-        goto(point.x + 10, point.y + 10)
-        dot(20, 'red')
-
     update()
-
-    for point, course in ghosts:
-        if abs(pacman - point) < 20:
-            return
-
     ontimer(move, 100)
 
 
@@ -180,5 +200,6 @@ onkey(lambda: change(-5, 0), 'Left')
 onkey(lambda: change(0, 5), 'Up')
 onkey(lambda: change(0, -5), 'Down')
 world()
+Ghost()
 move()
 done()
