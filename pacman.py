@@ -123,10 +123,10 @@ def Ghost():
     for point, course in ghosts:
         if (randint(0,5) == 4):
             options = [
-                      vector(5, 0),
-                      vector(-5, 0),
-                      vector(0, 5),
-                      vector(0, -5),
+                      vector(10, 0), #Aumentar la velocidad de los fantasmas en vector. Brenda Vega Méndez
+                      vector(-10, 0),
+                      vector(0, 10),
+                      vector(0, -10),
                       vector(0,pacman.y/2),
                       vector(pacman.x/2,0)
                       ]
@@ -138,10 +138,10 @@ def Ghost():
                 point.move(course)
             else:
                 options = [
-                          vector(5, 0),
-                          vector(-5, 0),
-                          vector(0, 5),
-                          vector(0, -5),
+                          vector(10, 0),
+                          vector(-10, 0),
+                          vector(0, 10),
+                          vector(0, -10),
                           vector(0,pacman.y/2),
                           vector(pacman.x/2,0)
                            ]
@@ -160,7 +160,6 @@ def Ghost():
 
 def move():
     """Move pacman and all ghosts."""
-    """Aumentar la velocidad de los fantasmas en vector""" """Brenda Vega Méndez"""
     writer.undo()
     writer.write(state['score'])
 
