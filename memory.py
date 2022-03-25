@@ -16,7 +16,7 @@ from freegames import path
 
 car = path('car.gif')
 tiles = ["!", "@", "·", "$", "%", "&", "/", "(", ")", "X", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v"] * 2
-#En esta parte se utilizaorn otros simbolos o letras para completar las palabras. Aarón García Guerrero
+#En esta parte se utilizamos otros simbolos o letras para completar los cuadros. Aarón García Guerrero
 state = {'mark': None}
 hide = [True] * 64
 count = 0 #Se define la variable count para poder contar los taps. Brenda Vega Méndez
