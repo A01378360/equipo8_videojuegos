@@ -6,7 +6,7 @@ Repositorio de videojuegos del equipo 8
 2. Snake: Este juego trata acerca de hacer crecer a una serpiente al alcanzar su comida. La serpinete y la comida cmabian de color. 
 3. Pacman: Este juego consiste en que el pacman debe comer todos los puntos blancos dentro del laberinto sin ser alcanzado por los fantasmas. 
 4. Cannon: Este juego consiste en golpear todas los objetivos posibles. Este juego nunca acaba incluso si los objetivos llegan al límite. 
-5. Mmemory: Este juego trata de encontrar la parejas de caracteres para formar una imagen después de encontrar todas. Se lleva a cabo un conteo de los taps realizados. 
+5. Memory: Este juego trata de encontrar la parejas de caracteres para formar una imagen después de encontrar todas. Se lleva a cabo un conteo de los taps realizados. 
 
 # # Modificaciones en los videojuegos 
 1. Paint: Se agregó la función de triángulo y un color (Brenda Vega). Se agregaron las funciones circle y rectangle (Aarón García). 
