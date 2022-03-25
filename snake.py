@@ -1,7 +1,3 @@
-'''Modificado por: 
-Aarón García Guerrero A01379967
-Brenda Vega Méndez A01378360'''
-
 """Snake, classic arcade game.
 
 Exercises
@@ -44,7 +40,7 @@ def FoodStep():
 
     global food
     if ((inside(food))):
-        step = vector(randint(-2,2) * 10, randint(-2,2) * 10)
+        step = vector(randint(-1,1) * 10, randint(-1,1) * 10)
         food.move(step)
     else:
         food = vector(0,0)
@@ -73,7 +69,7 @@ def move():
     clear() 
 
     for body in snake:
-		
+        
         square(body.x, body.y, 9, color1)
        
 
@@ -91,4 +87,5 @@ onkey(lambda: change(-10, 0), 'Left')
 onkey(lambda: change(0, 10), 'Up')
 onkey(lambda: change(0, -10), 'Down')
 move()
+FoodStep()
 done()
