@@ -1,7 +1,3 @@
-'''Modificado por: 
-Aarón García Guerrero A01379967
-Brenda Vega Méndez A01378360'''
-
 """Pacman, classic arcade game.
 
 Exercises
@@ -24,10 +20,10 @@ writer = Turtle(visible=False)
 aim = vector(5, 0)
 pacman = vector(-40, -80)
 ghosts = [
-    [vector(-180, 160), vector(5, 0)],
-    [vector(-180, -160), vector(0, 5)],
-    [vector(100, 160), vector(0, -5)],
-    [vector(100, -160), vector(-5, 0)],
+    [vector(-180, 160), vector(10, 0)],
+    [vector(-180, -160), vector(0, 10)],
+    [vector(100, 160), vector(0, -10)],
+    [vector(100, -160), vector(-10, 0)],
 ]
 # fmt: off
 """Modificar el diseño del tablero""" """Brenda Vega Méndez"""
@@ -121,15 +117,14 @@ def Ghost():
     global plan
 
     for point, course in ghosts:
-        if (randint(0,5) == 4):
+        if (randint(0,4) == 3):
             options = [
-                      vector(5, 0), 
-                      vector(-5, 0),
-                      vector(0, 5),
-                      vector(0, -5),
-                      vector(0,pacman.y/2),
-                      vector(pacman.x/2,0)
-                      ]
+                      vector(10, 0),
+                      vector(-10, 0),
+                      vector(0, 10),
+                      vector(0, -10)
+            ]
+                      
             plan = choice(options)
             course.x = plan.x
             course.y = plan.y
@@ -138,28 +133,27 @@ def Ghost():
                 point.move(course)
             else:
                 options = [
-                          vector(5, 0),
-                          vector(-5, 0),
-                          vector(0, 5),
-                          vector(0, -5),
-                          vector(0,pacman.y/2),
-                          vector(pacman.x/2,0)
-                           ]
+                          vector(10, 0),
+                          vector(-10, 0),
+                          vector(0, 10),
+                          vector(0, -10)
+                ]
                 plan = choice(options)
                 course.x = plan.x
                 course.y = plan.y
         up()
         goto(point.x + 10, point.y + 10)
-        dot(20, 'red') 
+        dot(20, 'red')  
     update()
     
     for point, course in ghosts:
         if abs(pacman - point) < 20:
             return
-    ontimer(Ghost, 10) #Aumentar la velocidad de los fantasmas. Brenda Vega Méndez
+    ontimer(Ghost, 100)
 
 def move():
     """Move pacman and all ghosts."""
+    """Aumentar la velocidad de los fantasmas en vector""" """Brenda Vega Méndez"""
     writer.undo()
     writer.write(state['score'])
 
@@ -181,6 +175,11 @@ def move():
     goto(pacman.x + 10, pacman.y + 10)
     dot(20, 'yellow')
     update()
+    
+    for point, course in ghosts:
+        if abs(pacman - point) < 20:
+            return
+        
     ontimer(move, 100)
 
 
