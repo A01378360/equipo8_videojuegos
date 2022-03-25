@@ -16,14 +16,6 @@ from freegames import square, vector
 food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
-"""Definir variable de colors con un vector de colores diferentes""" """Brenda Vega Méndez"""
-colors = ['orange', 'black', 'blue', 'pink', 'green'] 
-
-"""Elegir colores al azar para la serpiente y la comida""" """Brenda Vega Méndez"""
-color1 = choice(colors) 
-color2 = choice(colors)
-"""Remover color de la serpiente para que no coincida con el color de la comida""" """Brenda Vega Méndez""" 
-colors.remove(color1) 
 
 def change(x, y):
     """Change snake direction."""
@@ -49,6 +41,15 @@ def FoodStep():
 
 def move():
     """Move snake forward one segment."""
+    """Definir variable de colors con un vector de colores diferentes""" """Brenda Vega Méndez"""
+    colors = ['orange', 'black', 'blue', 'pink', 'green'] 
+
+    """Elegir colores al azar para la serpiente y la comida""" """Brenda Vega Méndez"""
+    color1 = choice(colors) 
+    color2 = choice(colors)
+    """Remover color de la serpiente para que no coincida con el color de la comida""" """Brenda Vega Méndez""" 
+    colors.remove(color1) 
+    
     head = snake[-1].copy()
     head.move(aim)
 
