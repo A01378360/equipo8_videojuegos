@@ -21,13 +21,13 @@ from freegames import floor, vector
 state = {'score': 0}
 path = Turtle(visible=False)
 writer = Turtle(visible=False)
-aim = vector(10, 0)
+aim = vector(5, 0)
 pacman = vector(-40, -80)
 ghosts = [
-    [vector(-180, 160), vector(10, 0)],
-    [vector(-180, -160), vector(0, 10)],
-    [vector(100, 160), vector(0, -10)],
-    [vector(100, -160), vector(-10, 0)],
+    [vector(-180, 160), vector(5, 0)],
+    [vector(-180, -160), vector(0, 5)],
+    [vector(100, 160), vector(0, -5)],
+    [vector(100, -160), vector(-5, 0)],
 ]
 # fmt: off
 """Modificar el diseño del tablero""" """Brenda Vega Méndez"""
@@ -123,10 +123,10 @@ def Ghost():
     for point, course in ghosts:
         if (randint(0,5) == 4):
             options = [
-                      vector(10, 0), #Aumentar la velocidad de los fantasmas. Brenda Vega Méndez
-                      vector(-10, 0),
-                      vector(0, 10),
-                      vector(0, -10),
+                      vector(5, 0), 
+                      vector(-5, 0),
+                      vector(0, 5),
+                      vector(0, -5),
                       vector(0,pacman.y/2),
                       vector(pacman.x/2,0)
                       ]
@@ -138,10 +138,10 @@ def Ghost():
                 point.move(course)
             else:
                 options = [
-                          vector(10, 0),
-                          vector(-10, 0),
-                          vector(0, 10),
-                          vector(0, -10),
+                          vector(5, 0),
+                          vector(-5, 0),
+                          vector(0, 5),
+                          vector(0, -5),
                           vector(0,pacman.y/2),
                           vector(pacman.x/2,0)
                            ]
@@ -150,13 +150,13 @@ def Ghost():
                 course.y = plan.y
         up()
         goto(point.x + 10, point.y + 10)
-        dot(20, 'red')  # Dibuja al fantasma
+        dot(20, 'red') 
     update()
     
     for point, course in ghosts:
         if abs(pacman - point) < 20:
             return
-    ontimer(Ghost, 100)
+    ontimer(Ghost, 10) #Aumentar la velocidad de los fantasmas. Brenda Vega Méndez
 
 def move():
     """Move pacman and all ghosts."""
