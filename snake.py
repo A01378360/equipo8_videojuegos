@@ -1,3 +1,7 @@
+'''Modificado por: 
+Aarón García Guerrero A01379967
+Brenda Vega Méndez A01378360'''
+
 """Snake, classic arcade game.
 
 Exercises
